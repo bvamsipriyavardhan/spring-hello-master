@@ -36,6 +36,25 @@
                     </execution>
                 </executions>
             </plugin>
+            <settings>
+                <pluginGroups>
+                     <pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
+                </pluginGroups>
+                <profiles>
+                    <profile>
+                        <id>sonar</id>
+                        <activation>
+                           <activeByDefault>true</activeByDefault>    
+                        </activation>
+                        <properties>
+                            <!-- Optional URL to server.Default  value is http://40.81.150.121:9000 -->
+                            <sonar.host.url>
+                                http://myserver:9000
+                            </sonar.host.url>    
+                        </properties>
+                    </profile>
+                </profiles>
+             </settings>
             <plugin>
                 <groupId>org.eluder.coveralls</groupId>
                 <artifactId>coveralls-maven-plugin</artifactId>
